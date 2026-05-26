@@ -1,35 +1,47 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { useFonts,
+         Inter_400Regular,
+         Inter_600SemiBold,
+         Inter_700Bold }
+from '@expo-google-fonts/inter';
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+  Inter_400Regular,
+  Inter_600SemiBold,
+  Inter_700Bold,
+});
+
+if (!fontsLoaded) {
+  return null;
+}
   return (
-    <View style={styles.container}>
+    <SafeAreaProvider>
+    <SafeAreaView style={styles.container}>
 
-      <View style={styles.logo}>
-        <View style={styles.innerLogo} />
-      </View>
-
+      <View style={styles.logo} />
       <Text style={styles.heading}>askSpace</Text>
-
-      <Text style={styles.subheading}>Get Occupancy Insights, Instantly.</Text>
-
+      
       <View style={styles.footer}>
-        <Text style={styles.footerText}>by</Text>
+        <Text style={styles.footerText}>from</Text>
         <Text style={styles.footerBrand}>Onavi</Text>
       </View>
 
       <StatusBar style="auto" />
 
-    </View>
+    </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#edf2fb',
+    backgroundColor: '#A7D6C6',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
   },
 
   logo: {
@@ -37,31 +49,19 @@ const styles = StyleSheet.create({
     height: 72,
     borderRadius: 36,
     borderWidth: 8,
-    borderColor: '#7b9cff',
+    borderColor: '#2ec27e',
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: 120,
     marginBottom: 22,
-  },
-
-  innerLogo: {
-    width: 24,
-    height: 24,
-    borderRadius: 12,
-    backgroundColor: '#2ec27e',
   },
 
   heading: {
     fontSize: 34,
-    color: '#022b3a',
-    fontWeight: '800',
+    fontFamily: 'Inter_700Bold',
+    color: '#ffffff',
     letterSpacing: -0.8,
     marginBottom: 8,
-  },
-
-  subheading: {
-    fontSize: 16,
-    color: '#1f7a83',
-    letterSpacing: -0.2,
   },
 
   footer: {
@@ -70,11 +70,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 
-  footerText: {
-    fontSize: 12,
-    color: '#5c6f7a',
-    marginBottom: 4,
-  },
+footerText: {
+  fontSize: 12,
+  fontFamily: 'Inter_400Regular',
+  color: '#5c6f7a',
+  marginBottom: 4,
+},
 
   footerBrand: {
     fontSize: 18,
