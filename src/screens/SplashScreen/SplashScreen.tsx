@@ -1,15 +1,17 @@
 import { SafeAreaView } from'react-native-safe-area-context';
-import { StyleSheet, View, Text } from 'react-native';
+import { View, Text } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { GlobalStyles } from '../../styles/GlobalStyles';
-import { styles } from './SplashScreen';
+import { styles } from './styles';
 
 export default function SplashScreen() {
     return (
-        <SafeAreaView style={GlobalStyles.Screen}>
+        <SafeAreaView style={GlobalStyles.screen}>
+
+            <View style={styles.logo}></View>
         
             <View>
-                <Text style={GlobalStyles.Header}>askSpace</Text>
+                <Text style={styles.heading}>askSpace</Text>
             </View>
               
             <View style={styles.footer}>
