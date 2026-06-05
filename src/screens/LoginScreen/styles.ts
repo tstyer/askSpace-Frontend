@@ -20,12 +20,6 @@ export const styles = StyleSheet.create({
     letterSpacing: -0.8,
     marginBottom: 8,
   },
-  button: {
-    position: 'absolute',
-    borderRadius: "16px",
-    backgroundColor: '#2ec27e',
-    margin: "10px", 
-  },
   loginText: {
 
   },

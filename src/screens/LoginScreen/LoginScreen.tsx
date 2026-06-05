@@ -1,8 +1,9 @@
 import { GlobalStyles } from '../../styles/GlobalStyles';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, Pressable } from 'react-native';
 import { styles } from './styles';
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { StatusBar } from 'expo-status-bar';
+import { loginButton, signUpButton } from '../../components/buttons/loginButtons/loginButtonStyles'
 
 
 export default function LoginScreen() {
@@ -16,8 +17,8 @@ export default function LoginScreen() {
                     </View>
 
                     <View /* view for the main button area */>
-                        <Button title="Log In" style={styles.button}></Button>
-                        <Button title="Sign Up"></Button>
+                        <Pressable loginButton></Pressable>
+                        <Pressable signUpButton></Pressable>
                     </View>
                       
                     <View style={styles.footer}>
