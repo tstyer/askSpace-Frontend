@@ -21,9 +21,7 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
-      <SplashScreen />
-      <LoginScreen />
-    
+      <LoginScreen />  
     </SafeAreaProvider>
   );
 }
@@ -35,3 +33,4 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
 });
+
