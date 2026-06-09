@@ -18,16 +18,10 @@ export const styles = StyleSheet.create({
     fontFamily: 'Inter_700Bold',
     color: '#0E7490',
     letterSpacing: -0.8,
-    marginBottom: 8,
   },
-  loginText: {
-
-  },
-  signUpButton: {
-
-  },
-  signUpText: {
-
+  buttonContainer: {
+    flex: 1,
+    justifyContent: 'center',
   },
     footer: {
     position: 'absolute',

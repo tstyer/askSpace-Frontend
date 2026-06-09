@@ -17,8 +17,11 @@ export default function LoginScreen() {
                         <Text style={styles.heading}>askSpace</Text>
                     </View>
 
-                    <LoginButton />
-                    <SignUpButton />
+                    <View style={styles.buttonContainer}>
+                        <LoginButton />
+                        <SignUpButton />
+                    </View>
+                    
                       
                     <View style={styles.footer}>
                         <Text style={styles.footerText}>from</Text>
