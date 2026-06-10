@@ -6,7 +6,8 @@ import { StatusBar } from 'expo-status-bar';
 import { LoginButton } from '../../components/buttons/loginButtons/LoginButton';
 import { SignUpButton } from '../../components/buttons/loginButtons/SignUpButton';
 import { Header } from '../../components/loginComponents/Header';
-
+import { Footer } from '../../components/loginComponents/Footer';
+ 
 
 export default function LoginScreen() {
     console.log('LoginScreen rendered');
@@ -19,11 +20,11 @@ export default function LoginScreen() {
                         <LoginButton />
                         <SignUpButton />
                     </View>
-                    <View style={styles.footer}>
-                        <Text style={styles.footerText}>from</Text>
-                        <Text style={styles.footerBrand}>Onavi</Text>
-                    </View>
-                      <StatusBar style="auto" />
+        <View>
+            <Footer />
+        </View>            
+        
+        <StatusBar style="auto" />
     </SafeAreaView>
     )
-}
+};
