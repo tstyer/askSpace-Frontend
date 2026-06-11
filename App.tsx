@@ -11,6 +11,7 @@ from '@expo-google-fonts/inter';
 
 import SplashScreen from './src/screens/SplashScreen';
 import LoginScreen from './src/screens/LoginScreen';
+import LoginFormScreen from './src/screens/LoginFormScreen';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -21,7 +22,7 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
-      <LoginScreen />  
+      <LoginFormScreen />  
     </SafeAreaProvider>
   );
 }

@@ -9,7 +9,7 @@ import { Header } from '../../components/loginComponents/Header';
 import { Footer } from '../../components/loginComponents/Footer';
  
 
-export default function LoginScreen() {
+export function LoginScreen() {
     console.log('LoginScreen rendered');
     return (
     <SafeAreaView style={GlobalStyles.screen}>
