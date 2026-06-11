@@ -13,4 +13,27 @@ import { LoginFormScreen } from './LoginFormScreen';
 
 describe(LoginFormScreen, () => {
 
+    // 1. See the screen loads with empty tag
+    test('login screen renders', () => {
+        render(<LoginFormScreen />);
+
+        expect(Text).toBeEmptyElement();
+    })
+
+    // 2. See components and input boxes load
+    test('components render', () => {
+        render(<LoginFormScreen />);
+
+        expect('<Header />').toBeTruthy();
+        expect('Footer />').toBeTruthy();
+    })
 })
+
+
+
+
+/* Learning Notes:
+    A unit test would need to contain at least one assertion. 
+    After you render something, you would need to make an assertion. 
+
+*/

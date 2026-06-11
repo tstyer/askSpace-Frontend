@@ -1,0 +1,12 @@
+Frontend Functions: What this folder will contain
+
+This folder will contain functions that communicate with the backend - API's. 
+
+They will contain async code, such as awaiting on data when a user clicks 'Login'. 
+
+They will primarily be based on awaiting information being sent from the backend:
+
+authService.ts
+siteService.ts
+occupancyService.ts
+noteService.ts
