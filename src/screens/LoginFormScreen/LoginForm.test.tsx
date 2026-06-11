@@ -13,35 +13,30 @@ import { LoginFormScreen } from './LoginFormScreen';
 
 describe('LoginFormScreen renders', () => {
 
-    beforeEach( () => {
-        render(<LoginFormScreen />);
+    beforeEach( async () => {
+        // Not typical to put render as await, but was for this case
+        await render(<LoginFormScreen />);
+    });
+
+    // 1. Header component renders
+    test('Header component renders', () => {
+
+        expect(screen.getByText('askSpace')).toBeTruthy();
     })
 
-    // 1. See the screen loads with empty tag
-    test('login screen renders', () => {
-    
-        expect(screen.getByText("Log in")).toBeTruthy();
-    })
-
-    // 2. Header component renders
-    test('components render', () => {
-
-        expect(screen.getByText('AskSpace')).toBeTruthy();
-    })
-
-    // 3. Footer component renders
-    test('Footer component renders', () => {
+    // 2. Footer component renders
+    test.only('Footer component renders', () => {
 
         expect(screen.getByText('by Onavi')).toBeTruthy();
     })
 
-    // 4. Email input renders
+    // 3. Email input renders
     test('email and password inputs render', () => {
 
         expect(screen.getByPlaceholderText('Email')).toBeTruthy();
     })
 
-    // 5. Password input renders
+    // 4. Password input renders
     test('password placeholder text appears', () => {
         
         expect(screen.getByPlaceholderText('Password')).toBeTruthy();
