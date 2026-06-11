@@ -8,7 +8,7 @@ export function Footer() {
     return (
     <SafeAreaView style={GlobalStyles.screen}>
         <View style={styles.footer}>
-            <Text style={styles.footerText}>from</Text>
+            <Text style={styles.footerText}>by</Text>
             <Text style={styles.footerBrand}>Onavi</Text>
         </View> 
     </SafeAreaView>

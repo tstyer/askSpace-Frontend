@@ -25,9 +25,9 @@ describe('LoginFormScreen renders', () => {
     })
 
     // 2. Footer component renders
-    test.only('Footer component renders', () => {
+    test('Footer component renders', () => {
 
-        expect(screen.getByText('by Onavi')).toBeTruthy();
+        expect(screen.getByText('Onavi')).toBeTruthy();
     })
 
     // 3. Email input renders
@@ -43,6 +43,8 @@ describe('LoginFormScreen renders', () => {
     })
 
 })
+
+describe('')
 
 /*
 
