@@ -4,40 +4,54 @@ import { styles } from './styles';
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Header } from '../../components/loginComponents/Header';
 import { Footer } from '../../components/loginComponents/Footer';
+import { GlobalStyles } from "../../styles/GlobalStyles";
 
 /* 
 # login state will be written here first
 # it will then be transferred over to be a separate hook
 */
 
-const [ email, setEmail ] = useState("");
+
 
 
 export function LoginFormScreen() {
+    const [ email, setEmail ] = useState("");
+    const [ password, setPassword ] = useState("");
+
     return(
 
-        <SafeAreaView>
+        <SafeAreaView style={GlobalStyles.screen}>
             <View>
                 <Header />
             </View>
 
-            <View>
-                <TextInput 
-                placeholder="Email"
-                />
-            </View>
+            <View style={styles.formContainer}>
 
-            <View>
-                <TextInput
-                placeholder="Password"
-                value={email}
-                onChangeText={setEmail} // onChangeText means to update email when the user types in something new
-                />
-            </View>
+                <View>
+                    <TextInput 
+                    style={[styles.emailBox, GlobalStyles.regularFont]}
+                    placeholder="Email"
+                    value={email}
+                    onChangeText={setEmail}
+                    />
+                </View>
 
-            <Pressable>
-                <Text>Forgot Password?</Text>
-            </Pressable>
+                <View>
+                    <TextInput 
+                    style={[styles.passwordBox, GlobalStyles.regularFont]}
+                    placeholder="Password"
+                    value={password}
+                    onChangeText={setPassword} // onChangeText means to update email when the user types in something new
+                    secureTextEntry
+                    />
+                </View>
+
+                <Pressable>
+                    <Text>Forgot Password?</Text>
+                </Pressable>
+
+            </View>
+           
 
             <View>
                 <Footer />
