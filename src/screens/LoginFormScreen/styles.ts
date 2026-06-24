@@ -6,6 +6,7 @@ export const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center'
     },
+    // Add emailBox and passwordBox together as inputBox - set as constant
     emailBox: {
         borderRadius: 8,
         borderWidth: 1,
