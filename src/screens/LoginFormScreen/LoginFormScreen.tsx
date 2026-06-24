@@ -46,8 +46,8 @@ export function LoginFormScreen() {
                     />
                 </View>
 
-                <Pressable>
-                    <Text>Forgot Password?</Text>
+                <Pressable style={styles.pressable}>
+                    <Text style={styles.forgotPass}>Forgot Password?</Text>
                 </Pressable>
 
             </View>
