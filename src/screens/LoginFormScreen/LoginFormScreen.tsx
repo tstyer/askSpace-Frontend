@@ -29,7 +29,7 @@ export function LoginFormScreen() {
 
                 <View>
                     <TextInput 
-                    style={[styles.emailBox, GlobalStyles.regularFont]}
+                    style={[styles.inputBox, GlobalStyles.regularFont]}
                     placeholder="Email"
                     value={email}
                     onChangeText={setEmail}
@@ -38,7 +38,7 @@ export function LoginFormScreen() {
 
                 <View>
                     <TextInput 
-                    style={[styles.passwordBox, GlobalStyles.regularFont]}
+                    style={[styles.passwordBox, GlobalStyles.regularFont, styles.inputBox]}
                     placeholder="Password"
                     value={password}
                     onChangeText={setPassword} // onChangeText means to update email when the user types in something new

@@ -7,22 +7,7 @@ export const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     // Add emailBox and passwordBox together as inputBox - set as constant
-    emailBox: {
-        borderRadius: 8,
-        borderWidth: 1,
-        borderColor: 'rgba(255, 255, 255, 0.85)',
-        color: '#F8F9FC',
-        backgroundColor: '#14B8A6',
-        shadowColor: '#000',
-        shadowOffset: {
-        width: 0,
-        height: 2,
-        },
-        shadowOpacity: 0.2,
-        paddingVertical: 8,
-        paddingHorizontal: 12
-    },
-    passwordBox: {
+    inputBox: {
         borderRadius: 8,
         borderWidth: 1,
         borderColor: 'rgba(255, 255, 255, 0.85)',
@@ -35,9 +20,13 @@ export const styles = StyleSheet.create({
         },
         // Android
         elevation: 5,
+
+        // both
         shadowOpacity: 0.2,
         paddingVertical: 8,
-        paddingHorizontal: 12,
+        paddingHorizontal: 12
+    },
+    passwordBox: {
         marginTop: 6
     },
     pressable: {
