@@ -8,8 +8,8 @@
 */
 
 import React from "react";
-import { screen, render } from '@testing-library/react-native';
-import { LoginFormScreen } from './LoginFormScreen';
+import { screen, render, fireEvent } from '@testing-library/react-native'; // Learning: fireEvent is an import needed to test to see if input fields's values change as expected
+import { LoginFormScreen } from '../LoginFormScreen';
 
 describe('LoginFormScreen renders', () => {
 
@@ -44,7 +44,59 @@ describe('LoginFormScreen renders', () => {
 
 })
 
-// describe('')
+// -- Login Input Functionality -- //
+
+describe('Login input functionality works', () => {
+
+    beforeEach( async () => {
+        await render(<LoginFormScreen />);
+    })
+
+    test('email input updates state', () => {
+        const emailInput = screen.getByPlaceholderText('Email');
+
+        fireEvent.changeText(emailInput, 'example@email.com'); // change text of the emailInput variable to '...'.
+        
+        expect(emailInput.props.value).toBe('example@email.com') // 'props' = properties, the value is expected to be ... 
+    })
+
+    test('password input updates state', () => {
+        const passInput = screen.getByPlaceholderText('Password');
+
+        fireEvent.changeText(passInput, 'test123');
+
+        expect(passInput.props.value).toBe('test123');
+    })
+
+    test('login button is disabled when no details have been entered', () => {
+
+    // Find the login button
+
+    // Assert that it is disabled
+
+    });
+
+    test('login button becomes enabled when email and password are entered', () => {
+
+    // Find email input
+
+    // Find password input
+
+    // Type into both
+
+    // Find login button
+
+    // Assert that it is now enabled
+
+    });
+    /* Tests
+✓ login button disabled while loading
+✓ loading spinner appears
+✓ pressing login calls your login function
+✓ invalid email shows validation error
+✓ empty password shows validation error
+    */
+})
 
 /*
 
