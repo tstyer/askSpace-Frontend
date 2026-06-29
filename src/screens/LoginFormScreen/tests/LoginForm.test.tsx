@@ -70,9 +70,9 @@ describe('Login input functionality works', () => {
 
     test('login button is disabled when no details have been entered', () => {
 
-    // Find the login button
+        const loginBtn = screen.getByTestId('loginBtnID');
 
-    // Assert that it is disabled
+        expect(loginBtn.props.disabled).toBeTruthy();
 
     });
 
@@ -90,7 +90,6 @@ describe('Login input functionality works', () => {
 
     });
     /* Tests
-✓ login button disabled while loading
 ✓ loading spinner appears
 ✓ pressing login calls your login function
 ✓ invalid email shows validation error
@@ -100,6 +99,8 @@ describe('Login input functionality works', () => {
 
 /*
 
+# NEXT: Write tests/to-do for login success - this will require creating data tables in <SQL/Supabase>
+# Users login credentials are stored in a protected authentication table, managed by Supabase.
 describe('async function tests', () => {
 
 #   1. using resolve to await expected data upon 'Login' success
