@@ -100,7 +100,34 @@ describe('Login input functionality works', () => {
 /*
 
 # NEXT: Write tests/to-do for login success - this will require creating data tables in <SQL/Supabase>
-# Users login credentials are stored in a protected authentication table, managed by Supabase.
+# Users login credentials are stored in a protected authentication table, managed by Supabase:
+
+# Supabase Project
+│
+├── auth.users           ← Managed by Supabase
+│      id (UUID)
+│      email
+│      encrypted_password
+│      created_at
+│      last_sign_in_at
+│      email_confirmed_at
+│      ...
+│
+├── public.profiles      ← Your table
+│      id (same UUID)
+│      username
+│      avatar
+│      bio
+│      role
+│      ...
+│
+├── public.posts
+├── public.messages
+├── public.spaces
+└── etc.
+
+
+
 describe('async function tests', () => {
 
 #   1. using resolve to await expected data upon 'Login' success
