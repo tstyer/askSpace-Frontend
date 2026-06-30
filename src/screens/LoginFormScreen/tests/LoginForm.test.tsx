@@ -19,7 +19,7 @@ describe('LoginFormScreen renders', () => {
     });
 
     // 1. Header component renders
-    test('Header component renders', () => {
+    test.only('Header component renders', () => {
 
         expect(screen.getByText('askSpace')).toBeTruthy();
     })
@@ -78,23 +78,34 @@ describe('Login input functionality works', () => {
 
     test('login button becomes enabled when email and password are entered', () => {
 
-    // Find email input
+        const emailInput = screen.getByPlaceholderText('Email');
+        const passInput = screen.getByPlaceholderText('Password');
+        const loginBtn = screen.getByTestId('loginBtnID');
 
-    // Find password input
+        fireEvent.changeText(emailInput, 'example@email.com');
 
-    // Type into both
+        fireEvent.changeText(passInput, 'test123');
 
-    // Find login button
-
-    // Assert that it is now enabled
+        expect(loginBtn.props.disabled).toBeFalsy(); // pressable doesn't have an enabled prop, only disabled. so expect disabled to be false when enabled.
 
     });
-    /* Tests
-✓ loading spinner appears
-✓ pressing login calls your login function
-✓ invalid email shows validation error
-✓ empty password shows validation error
-    */
+
+    test('loading spinner appears', () => {
+
+        const emailInput = screen.getByPlaceholderText('Email');
+        const passInput = screen.getByPlaceholderText('Password');
+        const loginBtn = screen.getByTestId('loginBtnID');
+
+        fireEvent.changeText(emailInput, 'example@email.com');
+
+        fireEvent.changeText(passInput, 'test123');
+
+        fireEvent.press(loginBtn);
+
+        expect(screen.getByTestId('spinner')).toBeTruthy(); // upon pressing login buttons, I expect the screen to display an element with a test id of 'spinner'.
+
+    })
+
 })
 
 /*
@@ -126,7 +137,7 @@ describe('Login input functionality works', () => {
 ├── public.spaces
 └── etc.
 
-
+# Then write tests for login errors: if a user enters an incorrect email or password/missing fields
 
 describe('async function tests', () => {
 
