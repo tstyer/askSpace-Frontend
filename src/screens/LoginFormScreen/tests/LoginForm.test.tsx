@@ -108,7 +108,7 @@ describe('Login input functionality works', () => {
 
 })
 
-/*
+/* DO NOT WRITE THESE TESTS HERE - THEY GO INTO AUTH SERVICES TEST AND USE LOGIN TEST
 
 # NEXT: Write tests/to-do for login success - this will require creating data tables in <SQL/Supabase>
 # Users login credentials are stored in a protected authentication table, managed by Supabase:
