@@ -1,7 +1,6 @@
 import { supabaseClient } from './../../supabase/createClient';
 // supabase client imported so you can use it to mock
 import { LoginFormScreen } from "../../screens/LoginFormScreen";
-import { supabaseClient } from "../../supabase/createClient";
 import { login, logout, register, refresh, getCurrentUser } from './authServices';
 
 /* Mock supabase to you do not send actual info to supabase:
