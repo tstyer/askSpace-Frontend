@@ -3,7 +3,7 @@ import { supabaseClient } from './../../supabase/createClient';
 import { LoginFormScreen } from "../../screens/LoginFormScreen";
 import { login, logout, register, refresh, getCurrentUser } from './authServices';
 
-/* Mock supabase to you do not send actual info to supabase:
+/* Mock supabase so you do not send actual info to supabase:
     # The below mock executes a function that says, "follow this chain, then execute jest.fn()"
     # The path below is the path in createClient.ts ("await supabaseClient.auth.signInWithPassword({")
 */
@@ -54,7 +54,7 @@ describe('login tests', () => {
             error: null,
         });
 
-        // call your login service
+        // call login service
         const result = await login(userEmail, pass);
 
         // login should return the data from Supabase
