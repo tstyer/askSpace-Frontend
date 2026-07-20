@@ -33,7 +33,7 @@ describe('login tests', () => {
     })
 
     test('login returns data when Supabase login succeeds', async () => {
-        // fake login details
+    
         const userEmail = 'travis@email.com';
         const pass = 'pass123';
 
@@ -59,6 +59,22 @@ describe('login tests', () => {
 
         // login should return the data from Supabase
         expect(result).toEqual(fakeData);
+    });
+
+    test('login throws an error when Supabase login fails', async () => {
+        const userEmail = 'travis@email.com';
+        const pass = 'wrongpass';
+
+        const fakeError = { message: 'Invalid login credentials' };
+
+        // tell the mocked Supabase function to fail this time
+        (supabaseClient.auth.signInWithPassword as jest.Mock).mockResolvedValue({
+            data: { user: null, session: null },
+            error: fakeError,
+        });
+
+        // login should throw, so assert on the rejected promise rather than the return value
+        await expect(login(userEmail, pass)).rejects.toEqual(fakeError);
     });
 
         // toBe() checks if two things are the exact same object in memory.
