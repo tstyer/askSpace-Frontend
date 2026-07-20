@@ -77,7 +77,14 @@ describe('login tests', () => {
         await expect(login(userEmail, pass)).rejects.toEqual(fakeError);
     });
 
-        // toBe() checks if two things are the exact same object in memory.
-        // toEqual() checks whether two objects have the same contents.
+     
+});
 
-})
+
+/*          Some Learning 
+
+ # toBe() checks if two things are the exact same object in memory.
+ # toEqual() checks whether two objects have the same contents.
+
+
+*/
