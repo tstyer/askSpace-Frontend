@@ -10,7 +10,7 @@ export async function login(email: string, password: string) {
     if(email) {
         console.log("email supplied");
 
-        // only enter nested if when email is truthy, otherwise straight to falsey in outter. 
+        // only enter nested when email is truthy, otherwise straight to falsey in outter. 
         if(password) {
             console.log("password supplied");
         } else {
@@ -24,10 +24,15 @@ export async function login(email: string, password: string) {
     // Sending credentials to Supabase:
     const result = await supabaseClient.auth.signInWithPassword({ email, password }); // labelled 'result' because I am receiving a response from supabase on credentials supplied
 
+    const { data, error } = result;
 
+    if(error) { // if error is truthy, then throw error. 
+        throw error;
+    } else {
+        return data;
+    }
+};
 
-
-}
 
 export async function logout() {
 
