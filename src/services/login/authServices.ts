@@ -22,7 +22,9 @@ export async function login(email: string, password: string) {
     };
 
     // Sending credentials to Supabase:
-    
+    const result = await supabaseClient.auth.signInWithPassword({ email, password }); // labelled 'result' because I am receiving a response from supabase on credentials supplied
+
+
 
 
 }
