@@ -1,6 +1,5 @@
 import { supabaseClient } from './../../supabase/createClient';
 // supabase client imported so you can use it to mock
-import { LoginFormScreen } from "../../screens/LoginFormScreen";
 import { login, logout, register, refresh, getCurrentUser } from './authServices';
 
 /* Mock supabase so you do not send actual info to supabase:
@@ -8,21 +7,30 @@ import { login, logout, register, refresh, getCurrentUser } from './authServices
     # The path below is the path in createClient.ts ("await supabaseClient.auth.signInWithPassword({")
 */
 
-jest.mock("../../supabaseClient", () => {
+jest.mock("../../supabaseClient/createClient", () => ({
     supabaseClient: {
         auth: {
             signInWithPassword: jest.fn()
         }
     }
-})
+}));
+
+beforeEach(() => {
+    jest.resetAllMocks();
+});
 
 describe('login tests', () => {
 
     test('email and password are sent to supabase', async () => {
-        // I am testing to see if supabase received the data
-        
+    // I am testing to see if supabase received the data
+
         const userEmail = "travis@email.com";
         const pass = "pass123";
+
+        (supabaseClient.auth.signInWithPassword as jest.Mock).mockResolvedValue({
+            data: { user: null, session: null },
+            error: null,
+        });
 
         await login(userEmail, pass);
 
@@ -83,7 +91,7 @@ describe('login tests', () => {
 
         await expect(login(userEmail, userPass)).rejects.toThrow("Email is required.");
 
-        expect(supabaseClient.auth.signInWithPassword).not.toHaveBeenCalled;
+        expect(supabaseClient.auth.signInWithPassword).not.toHaveBeenCalled();
     });
 
     test('throws error when password string missing', async () => {
@@ -92,7 +100,7 @@ describe('login tests', () => {
 
         await expect(login(userEmail, userPass)).rejects.toThrow("Password required.");
 
-        expect(supabaseClient.auth.signInWithPassword).not.toHaveBeenCalled;
+        expect(supabaseClient.auth.signInWithPassword).not.toHaveBeenCalled();
     })
      
 });
