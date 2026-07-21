@@ -7,7 +7,7 @@ import { login, logout, register, refresh, getCurrentUser } from './authServices
     # The path below is the path in createClient.ts ("await supabaseClient.auth.signInWithPassword({")
 */
 
-jest.mock("../../supabaseClient/createClient", () => ({
+jest.mock("./../../supabase/createClient", () => ({
     supabaseClient: {
         auth: {
             signInWithPassword: jest.fn()
@@ -15,11 +15,32 @@ jest.mock("../../supabaseClient/createClient", () => ({
     }
 }));
 
+// --- LOGIN TESTS --- //
+
 beforeEach(() => {
     jest.resetAllMocks();
 });
 
 describe('login tests', () => {
+
+    // testing missing email or pass fields are first since they never communicate with Supabase
+    test('throws error when email string is missing', async () => {
+        const userEmail = "";
+        const userPass = "test123";
+
+        await expect(login(userEmail, userPass)).rejects.toThrow("Email is required.");
+
+        expect(supabaseClient.auth.signInWithPassword).not.toHaveBeenCalled();
+    });
+
+    test('throws error when password string missing', async () => {
+        const userEmail = "trav@email.com";
+        const userPass = "";
+
+        await expect(login(userEmail, userPass)).rejects.toThrow("Password required.");
+
+        expect(supabaseClient.auth.signInWithPassword).not.toHaveBeenCalled();
+    });
 
     test('email and password are sent to supabase', async () => {
     // I am testing to see if supabase received the data
@@ -84,25 +105,6 @@ describe('login tests', () => {
         // login should throw, so assert on the rejected promise rather than the return value
         await expect(login(userEmail, pass)).rejects.toEqual(fakeError);
     });
-
-    test('throws error when email string is missing', async () => {
-        const userEmail = "";
-        const userPass = "test123";
-
-        await expect(login(userEmail, userPass)).rejects.toThrow("Email is required.");
-
-        expect(supabaseClient.auth.signInWithPassword).not.toHaveBeenCalled();
-    });
-
-    test('throws error when password string missing', async () => {
-        const userEmail = "trav@email.com";
-        const userPass = "";
-
-        await expect(login(userEmail, userPass)).rejects.toThrow("Password required.");
-
-        expect(supabaseClient.auth.signInWithPassword).not.toHaveBeenCalled();
-    })
-     
 });
 
 

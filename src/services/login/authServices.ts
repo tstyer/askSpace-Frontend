@@ -1,9 +1,28 @@
 // This is a layer that will talk with supabase
 // will not need to import React from "react" as not UI
 
-import { supabaseClient } from "../../supabase/createClient"; 
+import { error } from "node:console";
+import { supabaseClient } from "../../supabase/createClient";
 
 export async function login(email: string, password: string) {
+
+    // throwing error is credentials are missing:
+    if(email) {
+        console.log("email supplied");
+
+        // only enter nested if when email is truthy, otherwise straight to falsey in outter. 
+        if(password) {
+            console.log("password supplied");
+        } else {
+            throw new Error("Password required.");
+        };
+
+    } else {
+        throw new Error("Email is required."); // test written asks for this throw error message specifically. 
+    };
+
+    // Sending credentials to Supabase:
+    
 
 
 }
@@ -31,4 +50,12 @@ export async function getCurrentUser() {
     getCurrentUser()
     resetPassword()
     register()
+*/
+
+/*  Learning:
+    
+    # A shorter version of the nested loop in the login function is:
+        # "if(!email) throw new Error( ... )"
+        # "if(!password) throw new Error( ... )"
+
 */
