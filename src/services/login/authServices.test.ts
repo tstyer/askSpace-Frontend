@@ -108,6 +108,10 @@ describe('login tests', () => {
 });
 
 
+// --- LOGOUT TESTS --- //
+
+
+
 /*          Some Learning 
 
  # toBe() checks if two things are the exact same object in memory.
