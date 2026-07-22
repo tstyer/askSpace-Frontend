@@ -6,6 +6,7 @@ import { Header } from '../../components/loginComponents/Header';
 import { Footer } from '../../components/loginComponents/Footer';
 import { GlobalStyles } from "../../styles/GlobalStyles";
 import { Image } from "react-native";
+import { login } from "../../services/login/authServices";
 
 /* 
 # login state will be written here first
@@ -13,11 +14,24 @@ import { Image } from "react-native";
 */
 
 
-
-
 export function LoginFormScreen() {
     const [ email, setEmail ] = useState("");
     const [ password, setPassword ] = useState("");
+
+    async function handleLogin() { // this function doesn't run here, it's just defined here. it runs where it is called below.
+
+    console.log("login pressed");
+
+    try {
+        const data = await login(email, password);
+        console.log("Login succeeded:", data);
+
+    } catch (error) {
+        console.log("Login failed. Incorrect / Unauthorised credentials.");
+        console.log("Error details:", error);
+    }
+
+    };
 
     return(
 
@@ -51,7 +65,7 @@ export function LoginFormScreen() {
                     />
                 </View>
 
-                <Pressable style={styles.loginBtn}>
+                <Pressable style={styles.loginBtn} onPress={handleLogin}>
                     <Text style={styles.loginBtnText}>Login</Text>
                 </Pressable>
 
