@@ -9,8 +9,8 @@ export const styles = StyleSheet.create({
     },
 
     logo: {
-        height: 80,
-        width: 80,
+        height: 140,
+        width: 140,
     },
     // Add emailBox and passwordBox together as inputBox - set as constant
     inputBox: {
@@ -44,7 +44,9 @@ export const styles = StyleSheet.create({
     },
 
     forgotPass: {
-        color: colours.brand.periwinkle,   
+        color: colours.brand.periwinkle, 
+        fontSize: 12,
+        opacity: 20,  
     },
 
     primaryButton: {
