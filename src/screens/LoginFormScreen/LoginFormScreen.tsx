@@ -51,6 +51,10 @@ export function LoginFormScreen() {
                     />
                 </View>
 
+                <Pressable style={styles.loginBtn}>
+                    <Text style={styles.loginBtnText}>Login</Text>
+                </Pressable>
+
                 <Pressable style={styles.pressable} testID="LoginBtnID">
                     <Text style={styles.forgotPass}>Forgot Password?</Text>
                 </Pressable>
