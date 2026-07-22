@@ -2,21 +2,10 @@ import React from "react";
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-    logo: {
-    width: 72,
-    height: 72,
-    borderRadius: 36,
-    borderWidth: 8,
-    borderColor: '#2ec27e',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: 120,
-    marginBottom: 22,
-  },
   heading: {
     fontSize: 34,
     fontFamily: 'Inter_700Bold',
-    color: '#0E7490',
+    color: '#B6AAF5',
     letterSpacing: -0.8,
   },
     footer: {
@@ -31,7 +20,7 @@ export const styles = StyleSheet.create({
 },
   footerBrand: {
     fontSize: 18,
-    color: '#14B8A6',
+    color: '#B6AAF5',
     fontWeight: '700',
     letterSpacing: -0.4,
   },

@@ -5,6 +5,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Header } from '../../components/loginComponents/Header';
 import { Footer } from '../../components/loginComponents/Footer';
 import { GlobalStyles } from "../../styles/GlobalStyles";
+import { Image } from "react-native";
 
 /* 
 # login state will be written here first
@@ -23,6 +24,10 @@ export function LoginFormScreen() {
         <SafeAreaView style={GlobalStyles.screen}>
             <View>
                 <Header />
+            </View>
+
+            <View>
+                <Image source={require('../../assets/images/askspace_transparent.png')} style={styles.logo}></Image>
             </View>
 
             <View style={styles.formContainer}>

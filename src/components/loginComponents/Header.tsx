@@ -9,7 +9,7 @@ export function Header() {
     <SafeAreaView style={GlobalStyles.screen}>
         <View style={styles.logo}></View>   
             <View>
-                <Text style={styles.heading}>askSpace</Text>
+                <Text style={styles.heading}>AskSpace</Text>
             </View> 
     </SafeAreaView>
     )};

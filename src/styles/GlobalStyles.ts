@@ -5,7 +5,7 @@ import { fonts } from '../constants/fonts';
 export const GlobalStyles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: colours.background,
+    backgroundColor: colours.surface.mist, // create gradient
     alignItems: 'center'
   },
   regularFont: {

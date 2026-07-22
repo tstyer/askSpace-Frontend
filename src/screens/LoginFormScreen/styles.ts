@@ -1,22 +1,28 @@
 import React from "react";
 import { StyleSheet } from "react-native";
+import { colours } from "../../constants/colours";
 
 export const styles = StyleSheet.create({
     formContainer: {
         flex: 1,
         justifyContent: 'center'
     },
+
+    logo: {
+        height: 80,
+        width: 80,
+    },
     // Add emailBox and passwordBox together as inputBox - set as constant
     inputBox: {
         borderRadius: 8,
         borderWidth: 1,
-        borderColor: 'rgba(255, 255, 255, 0.85)',
+        borderColor: '#F7F5F5',
         color: '#F8F9FC',
-        backgroundColor: '#14B8A6',
-        shadowColor: '#000',
+        backgroundColor: colours.brand.mint,
+        shadowColor: '#A3ABF5',
         shadowOffset: {
         width: 0,
-        height: 2,
+        height: 3,
         },
         // Android
         elevation: 5,
@@ -26,17 +32,30 @@ export const styles = StyleSheet.create({
         paddingVertical: 8,
         paddingHorizontal: 12
     },
+
     passwordBox: {
         marginTop: 6
     },
+
     pressable: {
         alignItems: 'center',
         justifyContent: 'center',
         marginTop: 12,
     },
-    forgotPass: {
-        color: '#5B5BD6',   
-       
 
-    }
+    forgotPass: {
+        color: colours.brand.periwinkle,   
+    },
+
+    primaryButton: {
+        backgroundColor: colours.brand.periwinkle,
+    },
+
+    secondaryButton: {
+        backgroundColor: colours.brand.mint,
+    },
+
+    text: {
+        color: colours.text.primary,
+    },
 })
