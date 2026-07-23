@@ -8,31 +8,9 @@ import { GlobalStyles } from "../../styles/GlobalStyles";
 import { Image } from "react-native";
 import { login } from "../../services/login/authServices";
 
-/* 
-# login state will be written here first
-# it will then be transferred over to be a separate hook
-*/
 
 
 export function LoginFormScreen() {
-    const [ email, setEmail ] = useState("");
-    const [ password, setPassword ] = useState("");
-
-    async function handleLogin() { // this function doesn't run here, it's just defined here. it runs where it is called below.
-
-    console.log("login pressed");
-
-    try {
-        const data = await login(email, password);
-        console.log("Login succeeded:", data);
-
-    } catch (error) {
-        console.log("Login failed. Incorrect / Unauthorised credentials.");
-        console.log("Error details:", error);
-    }
-
-    };
-
     return(
 
         <SafeAreaView style={GlobalStyles.screen}>

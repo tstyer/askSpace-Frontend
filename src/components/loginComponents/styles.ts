@@ -3,6 +3,7 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   heading: {
+    marginTop: 15,
     fontSize: 22,
     fontFamily: 'Inter_700Bold',
     color: '#B6AAF5',
