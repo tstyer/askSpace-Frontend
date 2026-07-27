@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, Pressable, ActivityIndicator } from 'react-native';
+import { View, Text, TextInput, Pressable } from 'react-native';
 import { styles } from './styles';
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Header } from '../../components/loginComponents/Header';
