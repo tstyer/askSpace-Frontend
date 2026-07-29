@@ -7,6 +7,7 @@ import { Footer } from '../../components/loginComponents/Footer';
 import { GlobalStyles } from "../../styles/GlobalStyles";
 import { Image } from "react-native";
 import { login } from "../../services/login/authServices";
+import { useLogin } from "../../hooks/login/useLogin";
 
 
 
@@ -38,7 +39,7 @@ export function LoginFormScreen() {
                     style={[styles.passwordBox, GlobalStyles.regularFont, styles.inputBox]}
                     placeholder="Password"
                     value={password}
-                    onChangeText={setPassword} // onChangeText means to update email when the user types in something new
+                    onChangeText={setPassword} // onChangeText means to update password when the user types in something new
                     secureTextEntry
                     />
                 </View>

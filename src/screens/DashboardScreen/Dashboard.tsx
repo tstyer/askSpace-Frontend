@@ -6,7 +6,7 @@ export function Dashboard() {
     return(
         <SafeAreaView>
             <View>
-                <Text>Empty</Text>
+                <Text>Screen renders</Text>
             </View>
         </SafeAreaView>
     );
