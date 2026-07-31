@@ -24,11 +24,10 @@ describe('Screen UI tests', () => {
     
     beforeEach(() => {
         jest.resetAllMocks();
+        render(<Dashboard />)
     });
 
     test('screen renders', async () => {
-
-        render(<Dashboard />);
 
         const displayText = await screen.findByText('Screen renders'); // findByText is async
 
@@ -36,32 +35,29 @@ describe('Screen UI tests', () => {
     });
 
     test('section label displays', () => {
-        render(<Dashboard />);
-
+       
         const onSiteText = screen.getByText('ON SITE NOW');
 
         expect(onSiteText).toBeTruthy();
     });
 
     test('ALERTS section label displays', () => {
-        render(<Dashboard />);
-
+       
         const alertsLabel = screen.getByText('ALERTS');
 
         expect(alertsLabel).toBeTruthy();
     });
 
     test('YOUR SITES section label displays', () => {
-        render(<Dashboard />);
-
+      
         const yourSitesLabel = screen.getByText('YOUR SITES');
 
         expect(yourSitesLabel).toBeTruthy();
     });
 
     test('on-site occupancy count displays', () => {
-        render(<Dashboard />);
 
+        // CHANGE AS OCCUPANCY CHANGES: WONT BE FIXED TO 933
         const occupancyCount = screen.getByText('933');
         const capacityText = screen.getByText('of 1,340 capacity');
 
@@ -70,7 +66,7 @@ describe('Screen UI tests', () => {
     });
 
     test('occupancy summary line displays', () => {
-        render(<Dashboard />);
+    
 
         const occupiedPercentage = screen.getByText('70% occupied');
         const siteZoneSummary = screen.getByText('5 sites · 18 zones');
