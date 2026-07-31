@@ -5,20 +5,21 @@ import { styles } from './styles';
 
 export function BurgerButton() {
 
-    <SafeAreaView style={styles.burgerOuter}>
+    return(
+    <SafeAreaView>
 
-        <view style={styles.topLineOuter}>
+        <View style={styles.topLineOuter}>
             <View style={styles.topLine} />
-        </view>
+        </View>
         
-        <view style={styles.bottomLineOuter}>
+        <View>
             <View style={styles.middleLine} />
-        </view>
+        </View>
 
-        <view style={styles.bottomLineOuter}>
+        <View style={styles.bottomLineOuter}>
             <View style={styles.bottomLine} />
-        </view>
+        </View>
        
     </SafeAreaView>
-
+    );
 };
