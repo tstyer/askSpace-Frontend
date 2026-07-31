@@ -22,14 +22,14 @@ import { Dashboard } from '../Dashboard';
 
 describe('Screen UI tests', () => {
     
-    beforeEach(() => {
+    beforeEach(async () => {
         jest.resetAllMocks();
-        render(<Dashboard />)
+        await render(<Dashboard />);
     });
 
-    test('screen renders', async () => {
+    test('screen renders', () => {
 
-        const displayText = await screen.findByText('Screen renders'); // findByText is async
+        const displayText = screen.getByText('Screen renders'); // findByText is async
 
         expect(displayText).toBeVisible();
     });
