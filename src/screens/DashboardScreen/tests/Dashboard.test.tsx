@@ -35,11 +35,11 @@ describe('Screen UI tests', () => {
         expect(displayText).toBeVisible();
     });
 
-    test('section label displays', () => {
+    test('summary box displays', () => {
        
-        const onSiteText = screen.getByText('ON SITE NOW');
+        const summaryBox = screen.getByTestId('Summary Box');
 
-        expect(onSiteText).toBeTruthy();
+        expect(summaryBox).toBeOnTheScreen();
     });
 
     test('ALERTS section label displays', () => {
