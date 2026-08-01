@@ -13,8 +13,8 @@ export function Dashboard() {
                 <AppHeader />
             </View>
 
-            <View>
-                
+            <View testID='Summary Box'>
+
                 <View>
                     <Text>On Site Now:</Text>
                     <Text>{/* Hook that calls real-time data */} Out Of X Capacity.</Text>

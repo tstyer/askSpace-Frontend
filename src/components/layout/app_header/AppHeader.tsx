@@ -29,7 +29,8 @@ export function AppHeader() {
             {/* right end user */}
              <Pressable>
                 <View>
-                    <UserButton initials="TS" /> {/* Will change depending on who's signed in in future */}
+                    {/* Will change depending on who's signed in in future */}
+                    <UserButton initials="TS" /> 
                 </View>
             </Pressable>
 
