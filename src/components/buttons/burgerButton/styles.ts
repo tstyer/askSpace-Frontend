@@ -1,15 +1,20 @@
 import { StyleSheet } from "react-native";
 import { colours } from '../../../constants/colours';
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export const styles = StyleSheet.create({
+
+    safeAreaView: {
+        margin: 8,
+    },
     
     topLineOuter: {
         alignItems: 'flex-start',
     },
 
     topLine: {
-        width: 5,
-        height: 3,
+        width: 16,
+        height: 5,
         marginBottom: 1.5,
         borderRadius: 25,
         backgroundColor: colours.brand.periwinkle
@@ -21,8 +26,8 @@ export const styles = StyleSheet.create({
     */
 
     middleLine: {
-        width: 10,
-        height: 3,
+        width: 26,
+        height: 5,
         marginBottom: 1.5,
         borderRadius: 25,
         backgroundColor: colours.brand.periwinkle
@@ -33,9 +38,8 @@ export const styles = StyleSheet.create({
     },
 
     bottomLine: {
-        width: 5,
-        height: 3,
-        marginTop: 1.5,
+        width: 16,
+        height: 5,
         borderRadius: 25,
         backgroundColor: colours.brand.periwinkle
     }

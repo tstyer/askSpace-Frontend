@@ -4,8 +4,9 @@ import { fonts } from '../../../constants/fonts';
 
 export const styles = StyleSheet.create({
     circle: {
-        width: 30,
-        height: 30,
+        margin: 8,
+        width: 25,
+        height: 25,
         borderRadius: 20,
         backgroundColor: colours.brand.periwinkle,
         alignItems: 'center',
@@ -15,6 +16,6 @@ export const styles = StyleSheet.create({
     initials: {
         color: '#313d5d',
         fontFamily: fonts.semiBold,
-        fontSize: 14,
+        fontSize: 9,
     },
 });

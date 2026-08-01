@@ -6,7 +6,7 @@ import { styles } from './styles';
 export function BurgerButton() {
 
     return(
-    <SafeAreaView>
+    <SafeAreaView style={styles.safeAreaView}>
 
         <View style={styles.topLineOuter}>
             <View style={styles.topLine} />
