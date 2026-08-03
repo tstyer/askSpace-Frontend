@@ -4,6 +4,8 @@ import { Text, View, Pressable, ScrollView } from 'react-native';
 import { styles } from '../DashboardScreen/styles'
 import { AppHeader } from '../../components/layout/app_header/AppHeader';
 import { AccessibilityRole } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient'
+import { colours } from '../../constants/colours';
 
 export function Dashboard() {
     return(
@@ -13,21 +15,26 @@ export function Dashboard() {
                 <AppHeader />
             </View>
 
-            <View testID='Summary Box'>
+            <LinearGradient
+                testID='Summary Box'
+                colors={[colours.mint.light, colours.periwinkle.light]}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 1 }}
+                style={styles.summaryBox} >
 
                 <View>
-                    <Text>On Site Now:</Text>
-                    <Text>{/* Hook that calls real-time data */} Out Of X Capacity.</Text>
+                    <Text style={styles.onSiteText}>On Site Now:</Text>
+                    <Text style={styles.capacityText}>{/* Hook that calls real-time data */} Out Of X Capacity.</Text>
                 </View>
 
                 <View>
-                    <Text>X% Capacity Filled.</Text>
-                    <Text># Zone. # Sites.</Text>
+                    <Text style={styles.capacityFilledText}>X% Capacity Filled.</Text>
+                    <Text style={styles.zoneSiteText}># Zone. # Sites.</Text>
                 </View>
-                
 
-            </View>
-            
+
+            </LinearGradient>
+
         </SafeAreaView>
     );
 };

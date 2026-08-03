@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 import { colours } from '../../../constants/colours';
-import { SafeAreaView } from "react-native-safe-area-context";
+
 
 export const styles = StyleSheet.create({
 
