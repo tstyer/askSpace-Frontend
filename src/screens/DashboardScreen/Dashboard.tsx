@@ -20,16 +20,18 @@ export function Dashboard() {
                 colors={[colours.mint.light, colours.periwinkle.light]}
                 start={{ x: 0, y: 0 }}
                 end={{ x: 1, y: 1 }}
-                style={styles.summaryBox} >
+                style={styles.gradientBox} >
 
-                <View>
-                    <Text style={styles.onSiteText}>On Site Now:</Text>
-                    <Text style={styles.capacityText}>{/* Hook that calls real-time data */} Out Of X Capacity.</Text>
-                </View>
+                <View style={styles.summaryBox}>
+                    <View>
+                        <Text style={styles.onSiteText}>On Site Now:</Text>
+                        <Text style={styles.capacityText}>{/* Hook that calls real-time data */} Out Of X Capacity.</Text>
+                    </View>
 
-                <View>
-                    <Text style={styles.capacityFilledText}>X% Capacity Filled.</Text>
-                    <Text style={styles.zoneSiteText}># Zone. # Sites.</Text>
+                    <View>
+                        <Text style={styles.capacityFilledText}>X% Capacity Filled.</Text>
+                        <Text style={styles.zoneSiteText}># Zone. # Sites.</Text>
+                    </View>
                 </View>
 
 
