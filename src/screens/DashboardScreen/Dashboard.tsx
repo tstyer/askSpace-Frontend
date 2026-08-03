@@ -24,7 +24,9 @@ export function Dashboard() {
 
                 <View style={styles.summaryBox}>
                     <View>
-                        <Text style={styles.onSiteText}>On Site Now:</Text>
+                        <Text style={styles.onSiteText}>ON SITE NOW</Text>
+                        {/* below number will be a hook that updates */}
+                        <Text style={styles.number}>999</Text>
                         <Text style={styles.capacityText}>{/* Hook that calls real-time data */} Out Of X Capacity.</Text>
                     </View>
 

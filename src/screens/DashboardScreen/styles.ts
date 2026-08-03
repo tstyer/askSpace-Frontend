@@ -33,8 +33,15 @@ export const styles = StyleSheet.create({
     },
 
     onSiteText: {
+        color: '#448188',
         fontFamily: fonts.semiBold,
         fontSize: 13,
+    },
+
+    number: {
+        fontFamily: fonts.bold,
+        fontSize: 32,
+        color: '#000'
     },
 
     capacityText: {
