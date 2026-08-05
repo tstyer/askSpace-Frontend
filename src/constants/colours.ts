@@ -28,6 +28,6 @@ export const colours = {
     },
 
     text: {
-        primary: '#22263A',
+        primary: '#448188',
     },
 } as const;

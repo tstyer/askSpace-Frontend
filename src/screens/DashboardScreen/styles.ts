@@ -11,13 +11,13 @@ export const styles = StyleSheet.create({
 
     gradientBox: {
         borderRadius: 20,
-        borderWidth: 1,
-        borderColor: 'rgba(255, 255, 255, 0.6)',
+        borderWidth: 0.5,
+        borderColor: '#B6AAF5',
         marginHorizontal: 8,
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 3 },
-        shadowOpacity: 0.15,
-        shadowRadius: 6,
+        shadowColor: '#8E98F6',
+        shadowOffset: { width: 0, height: 0 },
+        shadowOpacity: 0.50,
+        shadowRadius: 10,
         elevation: 5,
     },
 
@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
     },
 
     onSiteText: {
-        color: '#448188',
+        color: colours.text.primary,
         fontFamily: fonts.semiBold,
         fontSize: 13,
     },
@@ -46,17 +46,24 @@ export const styles = StyleSheet.create({
 
     capacityText: {
         fontFamily: fonts.regular,
-        fontSize: 16,
+        fontSize: 12,
+        color: colours.text.primary
+    },
+
+    rightColumn: {
+        justifyContent: 'space-between',
     },
 
     capacityFilledText: {
         fontFamily: fonts.regular,
-        fontSize: 13,
+        fontSize: 12,
+        color: colours.text.primary
     },
 
     zoneSiteText: {
         fontFamily: fonts.regular,
-        fontSize: 13,
+        fontSize: 12,
+        color: colours.text.primary,
     },
 
 

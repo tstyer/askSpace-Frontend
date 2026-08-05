@@ -30,7 +30,7 @@ export function Dashboard() {
                         <Text style={styles.capacityText}>{/* Hook that calls real-time data */} Out Of X Capacity.</Text>
                     </View>
 
-                    <View>
+                    <View style={styles.rightColumn}>
                         <Text style={styles.capacityFilledText}>X% Capacity Filled.</Text>
                         <Text style={styles.zoneSiteText}># Zone. # Sites.</Text>
                     </View>
