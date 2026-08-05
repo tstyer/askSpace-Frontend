@@ -17,7 +17,11 @@ export const styles = StyleSheet.create({
         height: 5,
         marginBottom: 1.5,
         borderRadius: 25,
-        backgroundColor: colours.brand.periwinkle
+        backgroundColor: colours.mint.main,
+        shadowColor: '#8E98F6',
+        shadowOffset: {width: 0, height: 0},
+        shadowRadius: 3,
+        shadowOpacity: 0.3,
     },
 
     /* middleLineOuter: {
@@ -25,22 +29,28 @@ export const styles = StyleSheet.create({
     },
     */
 
-    middleLine: {
+    secondLine: {
         width: 26,
         height: 5,
         marginBottom: 1.5,
         borderRadius: 25,
-        backgroundColor: colours.brand.periwinkle
+        backgroundColor: colours.mint.main,
+        shadowColor: '#8E98F6',
+        shadowOffset: {width: 0, height: 0},
+        shadowRadius: 3,
+        shadowOpacity: 0.3,
     },
 
-    bottomLineOuter: {
-        alignItems: 'flex-end', // pushes the item to the far right
-    },
-
-    bottomLine: {
-        width: 16,
+    thirdLine: {
+        width: 40,
         height: 5,
+        marginBottom: 1.5,
         borderRadius: 25,
-        backgroundColor: colours.brand.periwinkle
-    }
+        backgroundColor: colours.mint.main,
+        shadowColor: '#8E98F6',
+        shadowOffset: {width: 0, height: 0},
+        shadowRadius: 3,
+        shadowOpacity: 0.3,
+    },
+
 });

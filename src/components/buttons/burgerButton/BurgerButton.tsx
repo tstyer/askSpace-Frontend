@@ -13,11 +13,11 @@ export function BurgerButton() {
         </View>
         
         <View>
-            <View style={styles.middleLine} />
+            <View style={styles.secondLine} />
         </View>
 
-        <View style={styles.bottomLineOuter}>
-            <View style={styles.bottomLine} />
+        <View>
+            <View style={styles.thirdLine} />
         </View>
        
     </SafeAreaView>
