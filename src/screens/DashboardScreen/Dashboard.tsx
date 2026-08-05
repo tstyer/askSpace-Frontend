@@ -6,6 +6,7 @@ import { AppHeader } from '../../components/layout/app_header/AppHeader';
 import { AccessibilityRole } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient'
 import { colours } from '../../constants/colours';
+import { AlertsSection } from '../../components/layout/alerts/AlertsSection';
 
 export function Dashboard() {
     return(
@@ -34,6 +35,10 @@ export function Dashboard() {
                         <Text style={styles.capacityFilledText}>X% Capacity Filled.</Text>
                         <Text style={styles.zoneSiteText}># Zone. # Sites.</Text>
                     </View>
+                </View>
+
+                <View>
+                    <AlertsSection />
                 </View>
 
 
