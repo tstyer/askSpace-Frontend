@@ -32,7 +32,7 @@ export const styles = StyleSheet.create({
         gap: 12,
         padding: 16,
         borderRadius: 16,
-        backgroundColor: '#FFFFFF',
+        backgroundColor: colours.surface.mist,
         marginHorizontal: 16,
         marginBottom: 8,
     },

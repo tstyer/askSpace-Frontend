@@ -37,12 +37,11 @@ export function Dashboard() {
                     </View>
                 </View>
 
-                <View>
-                    <AlertsSection />
-                </View>
-
-
             </LinearGradient>
+
+            <View>
+                <AlertsSection />
+            </View>
 
         </SafeAreaView>
     );
