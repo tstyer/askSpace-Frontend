@@ -7,3 +7,35 @@ collected be relevant hooks and UI.
 a database, a third-party SDK, a file system."
 
 In this case, the service is to collect lounge occupancy.
+
+// *** Service and Test Modification For Future //
+
+"Step 1 — Decide the exact query shape. getLoungeOccupancy() will call something like supabaseClient.from('lounge_current_occupancy').select('*').single(). 
+The .single() matters: it tells Supabase "I expect exactly one row back," which fits your stated scope (one zone, one row) — but it's worth knowing 
+now that this specific choice will need revisiting once a second zone exists, since .single() throws an error if more than one row comes back."
+
+WHAT THIS MEANS:
+- The service will need to expand so it collects multiple lines of data depending on the amount of zones.
+
+HOW YOU MUST CHANGE THE SERVICE TO SATISFY THIS IN THE FUTURE:
+- Remove .single() from the query. .single() means "give me back exactly one row" — with
+  more than one zone, Supabase will have more than one row to give back, and .single() will
+  throw an error instead of returning them.
+- The function will then return an array (a list) of rows instead of one object. Right now
+  it hands back one thing like { zone_id, name, current_occupancy }. Later it will hand back
+  a list of those, one per zone: [ { zone_id, name, current_occupancy }, { ... }, { ... } ].
+- The database view itself (lounge_current_occupancy) is currently built to only look at the
+  zone named "lounge". It will need to be rewritten so it groups by zone generally, instead of
+  filtering for one specific zone by name — otherwise the extra zones won't show up no matter
+  what the service or app code does.
+- Whatever calls this service (the hook, and eventually the UI) will need to change too — right
+  now they expect one number. Once it's a list, they'll need to add the numbers together (for
+  a single combined total) or loop over the list (to show each zone separately, e.g. one card
+  per site like in the mockup).
+- Worth renaming things once this happens. "lounge" in the file name and function name
+  (getLoungeOccupancy, lounge_services) only makes sense while there's literally one zone
+  called Lounge. Once it covers many zones, a neutral name (e.g. getZoneOccupancy,
+  occupancyServices) will describe what the code actually does instead of what it used to do.
+- The tests will need updating alongside all of this — instead of mocking one row coming back,
+  they'll need to mock a list of rows, and check that the totals/loops work correctly across
+  more than one zone.
