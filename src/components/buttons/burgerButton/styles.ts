@@ -22,6 +22,8 @@ export const styles = StyleSheet.create({
         shadowOffset: {width: 0, height: 0},
         shadowRadius: 3,
         shadowOpacity: 0.3,
+        borderColor: colours.border.third,
+        borderWidth: 0.05,
     },
 
     /* middleLineOuter: {
@@ -39,6 +41,8 @@ export const styles = StyleSheet.create({
         shadowOffset: {width: 0, height: 0},
         shadowRadius: 3,
         shadowOpacity: 0.3,
+        borderColor: colours.border.third,
+        borderWidth: 0.05,
     },
 
     thirdLine: {
@@ -51,6 +55,8 @@ export const styles = StyleSheet.create({
         shadowOffset: {width: 0, height: 0},
         shadowRadius: 3,
         shadowOpacity: 0.3,
+        borderColor: colours.border.third,
+        borderWidth: 0.05,
     },
 
 });

@@ -30,4 +30,11 @@ export const colours = {
     text: {
         primary: '#448188',
     },
+
+    border: {
+        primary: '#448188',
+        secondary: '#8E98F6',
+        third: '#CCD2F5'
+    },
+
 } as const;
