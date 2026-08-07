@@ -1,0 +1,9 @@
+This is a particular service which calls data from supabase. 
+
+This service will be expanded to greater than lounge services, and be a general service to collect occupancy data from Supabase, which will then be
+collected be relevant hooks and UI.
+
+"... A service (or "service layer") is a module whose only job is talking to something outside your app — an API, 
+a database, a third-party SDK, a file system."
+
+In this case, the service is to collect lounge occupancy.
